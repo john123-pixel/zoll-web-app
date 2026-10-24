@@ -124,7 +124,7 @@ body.in #app{display:flex}body.in #gate{display:none}
 .gtop{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1320px;margin:0 auto;padding:1.1rem clamp(1rem,4vw,3rem) .4rem}
 .gtop .brand{border:0;margin:0;padding:0}
 .gedition{font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--brass2);border:1px solid rgba(224,178,90,.38);padding:.34rem .8rem;border-radius:99px;background:rgba(224,178,90,.08);white-space:nowrap}
-.gwrap{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,430px);grid-template-areas:"txt card" "scope card";column-gap:clamp(1.5rem,4.5vw,4.5rem);row-gap:1.5rem;align-items:start;max-width:1320px;margin:0 auto;padding:clamp(.8rem,4vh,3rem) clamp(1rem,4vw,3rem) 2.4rem}
+.gwrap{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,430px);grid-template-areas:"txt card";column-gap:clamp(1.5rem,4.5vw,4.5rem);row-gap:1.5rem;align-items:center;min-height:calc(100vh - 76px);max-width:1320px;margin:0 auto;padding:clamp(.8rem,4vh,3rem) clamp(1rem,4vw,3rem) 2.4rem}
 .gtxt{grid-area:txt;min-width:0}.gcard{grid-area:card}.gscope{grid-area:scope;min-width:0}
 .gtxt .eyebrow{color:var(--brass2)}
 .gtxt h1{color:#fff;font-size:clamp(2.15rem,4.3vw,3.55rem);line-height:1.05;letter-spacing:-.02em;margin:.25em 0 .38em;text-shadow:0 2px 28px rgba(0,0,0,.45)}
@@ -181,7 +181,7 @@ body.in #app{display:flex}body.in #gate{display:none}
 .gsteps{display:flex;gap:.4rem;flex-wrap:wrap;list-style:none;margin:.85rem 0 0;padding:0;font-size:.74rem;color:#b4c4dc;font-weight:700}
 .gsteps li{display:flex;align-items:center;gap:.4rem}.gsteps li+li::before{content:"";width:18px;height:1px;background:rgba(255,255,255,.25);margin-right:.1rem}
 .gsteps b{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:rgba(224,178,90,.16);color:var(--brass2);font-size:.68rem}
-@media(max-width:1000px){.gwrap{grid-template-columns:minmax(0,1fr);grid-template-areas:"txt" "card" "scope"}.gcard{max-width:560px}#gate .shade{background:linear-gradient(180deg,rgba(4,12,26,.72),rgba(4,12,26,.82) 40%,rgba(4,12,26,.9))}}
+@media(max-width:1000px){.gwrap{grid-template-columns:minmax(0,1fr);grid-template-areas:"txt" "card";min-height:0}.gcard{max-width:560px}#gate .shade{background:linear-gradient(180deg,rgba(4,12,26,.72),rgba(4,12,26,.82) 40%,rgba(4,12,26,.9))}}
 @media(max-width:620px){.gstats{grid-template-columns:repeat(2,minmax(0,1fr))}.gstats div:nth-child(3){padding-left:0;border-left:0}.gstats div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.1)}.gscope ul{grid-template-columns:1fr}.gedition{display:none}.gtxt .lead{font-size:.97rem}.gcard{padding:1.2rem 1.1rem 1.1rem}}
 /* ===== Coach Lenz ===== */
 .off-wrap{position:relative}
@@ -423,7 +423,7 @@ details.acc>summary:hover{background:var(--line2)}
       <p class="ghint" id="candHint">Für Ihre persönliche Begrüßung und als Wasserzeichen auf Ihren Downloads (PDF/Word).</p>
       <label class="f" for="pw">Zugangswort</label>
       <div class="fld">
-        <input id="pw" type="password" placeholder="Name laut Buchtitel" autocapitalize="off" autocorrect="off" spellcheck="false" aria-describedby="pwHint gerr" autocomplete="off">
+        <input id="pw" type="password" placeholder="Autorennamen eingeben" autocapitalize="off" autocorrect="off" spellcheck="false" aria-describedby="pwHint gerr" autocomplete="off">
         <span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span>
         <button type="button" class="eye" id="pwEye" aria-label="Zugangswort anzeigen" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
@@ -433,18 +433,6 @@ details.acc>summary:hover{background:var(--line2)}
       <button class="btn pri lg" type="submit" id="loginBtn">Zur Lern-App</button>
       <p class="gfine">Unabhängige Lernhilfe. Kein Angebot der Zollverwaltung. Alle Fragen sind eigene Übungsaufgaben.</p>
     </form>
-    <div class="gscope">
-      <div class="head"><h3>Was geprüft wird – und wo es im Buch steht</h3><span>Schriftlicher Teil, Arbeitsprobe, Gespräch</span></div>
-      <ul>
-        <li data-k="sprache"><i style="--c:#5b8fd6"></i><div><b>Sprachverständnis</b><span>Rechtschreibung, Grammatik, Wortschatz</span></div><em>Kap. 2–3</em></li>
-        <li data-k="zahlen"><i style="--c:#3fae7c"></i><div><b>Logik- und Zahlenverständnis</b><span>Rechnen, Prozente, Reihen, Schlussfolgern</span></div><em>Kap. 6–8</em></li>
-        <li data-k="text"><i style="--c:#e0b25a"></i><div><b>Textanalyse und Rechtstexte</b><span>Vorschriften anwenden, Grafiken auswerten</span></div><em>Kap. 4</em></li>
-        <li data-k="wissen"><i style="--c:#e2735f"></i><div><b>Wissenstest</b><span>Politik, Geschichte, Wirtschaft, Zoll</span></div><em>Kap. 9–10</em></li>
-        <li data-k="schreiben"><i style="--c:#a37ad1"></i><div><b>Arbeitsprobe</b><span>Schriftliche Ausarbeitung im Schreibstudio</span></div><em>Kap. 5</em></li>
-        <li data-k="muendlich"><i style="--c:#8ea6c8"></i><div><b>Mündliches Verfahren</b><span>Interview und Rollenspiel trainieren</span></div><em>Kap. 1</em></li>
-      </ul>
-      <ol class="gsteps"><li><b>1</b>Einstufen</li><li><b>2</b>Lernplan</li><li><b>3</b>Üben</li><li><b>4</b>Simulieren</li></ol>
-    </div>
   </div>
 </section>
 
@@ -2574,7 +2562,7 @@ function gateGreeting() {
   speak($('#gSay'), greetTime() + '. Ich bin Coach Lenz und begleite Sie durch die Vorbereitung.');
   const lines = () => { const nm = gateFirst(); return [
     nm ? 'Schön, dass Sie da sind, ' + nm + '. Jetzt noch das Zugangswort.' : 'Tragen Sie zuerst Ihren Namen ein, dann das Zugangswort aus dem Buch.',
-    'Im Prüfungsaufbau leuchtet auf, welcher Teil zur Szene im Bild gehört.',
+    'Unter den Zahlen sehen Sie, welcher Prüfungsteil zur Szene im Bild gehört.',
     pick(MSG.enc),
     'Vom Einstufungstest bis zur Prüfungssimulation: alles in einer App.'] };
   const poses = ['point', 'think', 'thumbs', 'wave'];
